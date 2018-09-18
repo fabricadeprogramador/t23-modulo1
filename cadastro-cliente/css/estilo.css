@@ -1,0 +1,148 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+h1{
+    margin: 0px;
+}
+
+nav{
+    background-color: rgb(9, 163, 193);
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    box-shadow: 5px 0px 10px gray;
+    overflow: hidden;
+    transition: width 1s;
+}
+
+nav ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li{
+    padding: 10px;
+    list-style: none; 
+}
+
+nav li:hover{
+    background-color: rgb(13, 101, 121);
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    width: 70%;
+    float: right;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: width 1s;
+}
+
+form{
+    width: 70%;
+    margin: auto;
+}
+
+form div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="datetime-local"]{
+    width: 100%;
+    padding: 10px;
+}
+
+form button{
+    background-color: rgb(9, 163, 193);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+}
+
+form button:hover{
+    background-color: rgb(13, 101, 121);
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.divCenter{
+    text-align: center;
+}
+
+.btn-menu-abrir{
+    width: 20px;
+    opacity: 0;
+}
+
+.btn-menu-fechar{
+    width: 20px;
+    opacity: 0;
+}
+
+.btn-menu:hover{
+    cursor: pointer;
+}
+
+.menu-aberto{
+    width: 50%;
+}
+
+.mensagens{
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    opacity: .9;
+    position: absolute;
+    width: 60%;
+    animation: slide-mensagem 1s;
+}
+
+.mensagens.show{
+    display: block;
+}
+
+.mensagens img{
+    cursor: pointer;
+    width: 10px;
+    float: right;
+}
+
+@keyframes slide-mensagem{
+    from {
+        transform: translate3d(0px, -50px, 0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: .9;
+    }
+}
+
+@media(max-width: 600px){
+    nav{
+        width: 0%;
+    }
+    main{
+        width: 100%;
+    }
+    .btn-menu-abrir{
+        opacity: 1;
+    }
+    .btn-menu-fechar{
+        opacity: 1;
+    }
+}

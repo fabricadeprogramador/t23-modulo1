@@ -1,0 +1,23 @@
+.calculadora{
+    border-radius: 30px;
+    background-color: blue;
+    color: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px;
+    text-align: center;
+}
+
+.inputCalculadora{
+    margin: 20px 0px 20px 0px;
+}
+
+.botao{
+    background-color: white;
+    color: blue;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 800;
+}
