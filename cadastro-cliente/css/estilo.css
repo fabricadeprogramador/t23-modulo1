@@ -83,12 +83,14 @@ form button:hover{
 
 .btn-menu-abrir{
     width: 20px;
+    padding: 10px;
     opacity: 0;
 }
 
 .btn-menu-fechar{
     width: 20px;
-    opacity: 0;
+    padding: 10px;
+    opacity: 1;
 }
 
 .btn-menu:hover{
@@ -96,9 +98,28 @@ form button:hover{
 }
 
 .menu-aberto{
-    width: 50%;
+    width: 30%;
 }
 
+.main-menu-aberto{
+    width: 70%;
+}
+
+.menu-fechado{
+    width: 0%;
+}
+
+.main-menu-fechado{
+    width: 100%;
+}
+
+.exibir-botao{
+    opacity: 1;
+}
+
+.remover-botao{
+    opacity: 0;
+}
 .mensagens{
     display: none;
     background-color: red;
@@ -143,6 +164,6 @@ form button:hover{
         opacity: 1;
     }
     .btn-menu-fechar{
-        opacity: 1;
+        opacity: 0;
     }
 }
