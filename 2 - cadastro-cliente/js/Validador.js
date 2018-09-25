@@ -2,21 +2,23 @@ class Validador{
 
     validar(){
 
+        let mensagens = "";
+
         let inputNome = document.getElementById("nome").value;
         let inputEmail = document.getElementById("email").value;
         let inputMasc = document.getElementById("masc").checked;
         let inputFem = document.getElementById("fem").checked;
 
         if(inputNome == ""){
-            alert("O campo nome é obrigatório!");
+            mensagens += "O campo nome é obrigatório! \n"
         }
 
         if(inputEmail == ""){
-            alert("O campo e-mail é obrigatório!");
+            mensagens += "O campo e-mail é obrigatório!\n";
         }
 
         if(inputMasc == false && inputFem == false){
-                alert("O campo sexo é obrigatório!");
+            mensagens +="O campo sexo é obrigatório!\n";
         }
 
         // let sexo = document.querySelector("[type=radio]:checked");
@@ -28,25 +30,29 @@ class Validador{
         let qtdCursos = document.querySelectorAll("[type=checkbox]:checked").length;
 
         if(qtdCursos == 0){
-            alert("Escolha pelo menos um curso de interesse!");
+            mensagens += "Escolha pelo menos um curso de interesse!\n";
         }
 
         let estado = document.getElementById("estado").value;
 
         if(estado == ""){
-            alert("Selecione o estado!");
+            mensagens += "Selecione o estado!\n";
         }
 
         let foto = document.getElementById("foto").value;
 
         if(foto == ""){
-            alert("Selecione uma foto!")
+            mensagens += "Selecione uma foto!\n";
         }
 
         let dataNasc = document.getElementById("datanasc").value;
 
         if(dataNasc == ""){
-            alert("Data de Nascimento obrigatória!")
+            mensagens += "Data de Nascimento obrigatória!\n";
+        }
+
+        if(mensagens != ""){
+            alert(mensagens);
         }
     }
 }
