@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
@@ -21,7 +22,13 @@
     </div>
 
     <button type="button" onclick="calculadora.calcularIMC()">Calcular IMC</button>
+    <button type="button" onclick="calculadora.classificar()">Classificar</button>
     <button type="button" onclick="calculadora.limpar()">Limpar</button>
+
+    <div>
+        <span id="resultadoIMC"></span>
+        <span id="resultadoClassificacao"></span>
+    </div>
 </body>
 
 </html>

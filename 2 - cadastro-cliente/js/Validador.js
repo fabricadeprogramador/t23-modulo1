@@ -52,7 +52,9 @@ class Validador{
         }
 
         if(mensagens != ""){
-            alert(mensagens);
+            // alert(mensagens);
+            document.getElementById("textoMensagem").innerText = mensagens;
+            document.querySelector(".mensagens").classList.add("show");
         }
     }
 }
