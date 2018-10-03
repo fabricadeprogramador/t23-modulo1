@@ -1,4 +1,3 @@
-var convidado = "";
 class ListaConvidados {
 
     adicionar() {
@@ -6,10 +5,15 @@ class ListaConvidados {
         if (document.getElementById("inputConvidado").value == "") {
             alert("Insira o nome do convidado!")
         } else {
-            convidado += document.getElementById("inputConvidado").value + "\n\n";
-            document.getElementById("lista").innerText = convidado;
+          
+            let elementoInput = document.getElementById("inputConvidado");
+            let valorInput = elementoInput.value;
 
-            document.getElementById("inputConvidado").value = "";
+            let elementoLi = document.createElement("li");
+            elementoLi.innerText = valorInput;
+
+            let elementoUl = document.getElementById("lista");
+            elementoUl.appendChild(elementoLi);
         }
     }
 }
