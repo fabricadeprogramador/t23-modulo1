@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Triângulos</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="titulo">
+            <img src="img/triangulo.svg" alt="icone triangulo">
+            <h1>Triângulo</h1>
+        </div>
+
+        <div class="inputs">
+            <div>
+                <label for="lado1">Lado 1</label>
+                <input type="number" id="lado1">
+            </div>
+
+
+            <div>
+                <label for="lado2">Lado 2</label>
+                <input type="number" id="lado2">
+            </div>
+
+
+            <div>
+                <label for="lado3">Lado 3</label>
+                <input type="number" id="lado3">
+            </div>
+        </div>
+
+
+        <button type="button" onclick="triangulo.identificar()">Descobrir Triângulo</button>
+
+        <span id="resultado"></span>
+    </div>
+</body>
+
+</html>
