@@ -2,15 +2,15 @@ var contador = 0;
 
 class ListaConvidados {
 
-    adicionar() {
-        
+    salvar() {
+
         if (document.getElementById("inputConvidado").value == "") {
             alert("Insira o nome do convidado!")
         } else {
-          
+
             //Pegando o nome do convidado do input
             let nomeConvidado = document.getElementById("inputConvidado").value;
-            
+
             //Pegando o elemento div da lista
             let elementoLista = document.getElementById("lista");
 
@@ -18,6 +18,7 @@ class ListaConvidados {
             let divExterna = document.createElement("div");
             let spanInterno = document.createElement("span");
             let imgInterna = document.createElement("img");
+            let imgEdit = document.createElement("img");
 
             //Setando classe CSS e ID da div
             divExterna.classList.add("item-lista");
@@ -25,8 +26,11 @@ class ListaConvidados {
             divExterna.setAttribute("id", idNovo);
 
             //Setando o onClick do imagem de remoção
-            imgInterna.setAttribute("onclick", "lista.remover('" + idNovo + "')" );
-            
+            imgInterna.setAttribute("onclick", "lista.remover('" + idNovo + "')");
+
+            //Setando o onClick do imagem de edição
+            imgEdit.setAttribute("onclick", "lista.editar('" + idNovo + "')");
+
 
             //Setar os dados necessários
 
@@ -36,9 +40,13 @@ class ListaConvidados {
             //Setar a imagem no elemento img
             imgInterna.setAttribute("src", "img/delete.svg");
 
+            //Setar a imagem no elemento img de edição
+            imgEdit.setAttribute("src", "img/edit.svg");
+
             //Adicionar span e img como filhos da div criada
             divExterna.appendChild(spanInterno);
             divExterna.appendChild(imgInterna);
+            divExterna.appendChild(imgEdit);
 
             //Adicionar a div criada como filha da lista
             elementoLista.appendChild(divExterna);
@@ -48,8 +56,15 @@ class ListaConvidados {
         }
     }
 
-    remover(itemId){
-        document.getElementById(itemId).remove();
+    remover(idDaRemocao) {
+        document.getElementById(idDaRemocao).remove();
+    }
+
+    editar(idDaEdicao){
+        let elementoDiv = document.getElementById(idDaEdicao);
+        let convidadoEditar = elementoDiv.childNodes[0].textContent;
+
+        document.getElementById("inputConvidado").value = convidadoEditar;
     }
 }
 
