@@ -1,9 +1,11 @@
-var contador = 0;
-var idEdicao = null;
-
 class ListaConvidados {
 
-    salvar() {
+    constructor(){
+        this.contador = 0;
+        this.idEdicao = null;
+    }
+
+      salvar(convidado) {
 
         //Pegar os dados da tela
         let nome = document.getElementById("inputNome").value;
@@ -12,9 +14,9 @@ class ListaConvidados {
 
         let tabela = document.getElementById("tabela");
 
-        if(idEdicao == null){
+        if(this.idEdicao == null){
             let linha  = tabela.insertRow();
-            let id = "linha-" + contador
+            let id = "linha-" + this.contador;
             linha.id = id;
     
             let celulaNome = linha.insertCell(0);
@@ -41,17 +43,15 @@ class ListaConvidados {
             celulaEditar.appendChild(imagemEditar);
             celulaExcluir.appendChild(imagemExcluir);
 
-            contador++;
+            this.contador++;
         } else {
-            let elementoEdicao = document.getElementById(idEdicao)
+            let elementoEdicao = document.getElementById(this.idEdicao)
             elementoEdicao.childNodes[0].innerText = nome;
             elementoEdicao.childNodes[1].innerText = idade;
             elementoEdicao.childNodes[2].innerText = sexo;
         }
 
-        document.getElementById("inputNome").value = "";
-        document.getElementById("inputIdade").value = "";
-        document.querySelector("input[type=radio]:checked").checked = false;
+       this.limpar();
     }
 
     remover(id) {
@@ -62,7 +62,7 @@ class ListaConvidados {
     }
 
     editar(id, nome, idade, sexo) {
-        idEdicao = id;
+        this.idEdicao = id;
         document.getElementById("inputNome").value = nome;
         document.getElementById("inputIdade").value = idade;
         if(sexo == "f"){
@@ -71,6 +71,12 @@ class ListaConvidados {
             document.getElementById("masc").checked = true;
         }
     }
+
+    limpar(){
+        document.getElementById("inputNome").value = "";
+        document.getElementById("inputIdade").value = "";
+        document.querySelector("input[type=radio]:checked").checked = false;
+    }
 }
 
-var lista = new ListaConvidados();
+var lista = new ListaConvidados(12);
