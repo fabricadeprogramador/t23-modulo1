@@ -123,4 +123,4 @@ class ListaConvidados {
     }
 }
 
-var lista = new ListaConvidados(12);
+var lista = new ListaConvidados();
