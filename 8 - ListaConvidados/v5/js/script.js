@@ -67,6 +67,8 @@ class ListaConvidados {
                         this.convidados.splice(i,1, convidadoRetornado);
                    }
                }
+               this.idEdicao = null;
+               this.gerarTabela();
             }
         }
 
