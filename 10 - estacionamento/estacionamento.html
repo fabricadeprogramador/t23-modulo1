@@ -6,9 +6,9 @@
         <script src="js/estacionamento.js"></script>
     </head>
 
-    <body>
+    <body class="card">
         
-        <div id="">
+        <div >
 
             <h1>Lista de Carros</h1>
 
@@ -23,6 +23,7 @@
             
             <button type="button" onclick="estacionamento.salvar()">Salvar</button>
             <button type="button" onclick="estacionamento.limpar()">Cancelar</button>
+            <button type="button" onclick="estacionamento.resultado()">Resultado</button>
 
         </div>
 
@@ -38,6 +39,13 @@
 
             </tbody>
         </table>
+
+        <fieldset id="resultado">
+            <legend>
+                Resultado
+            </legend>
+            <span id="campoResposta"></span>
+        </fieldset>
 
     </body>
 
