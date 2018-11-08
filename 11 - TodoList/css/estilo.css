@@ -1,4 +1,41 @@
+body{
+    font-family: sans-serif
+}
+
 img { 
     width: 20px;
     cursor: pointer;
+    vertical-align: middle;
+}
+
+.card{
+    width: 30%;
+    margin: auto;
+    padding: 30px;
+}
+
+.principal{
+    
+}
+
+.principal h2 {
+    text-align: center;
+}
+
+.principal input{
+    width: 80%;
+}
+
+.entrada{
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.lista{
+    padding: 20px;
+}
+
+.tabela{
+    width: 100%;
+    text-align: center;
 }

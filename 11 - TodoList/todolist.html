@@ -10,22 +10,22 @@
 
 <body>
 
-    <div>
-        <h2>Gerenciador de Tarefas</h2>
-
-        <input type="text" placeholder="Tarefa" id="input">
-        <button type="button" onclick="gerenciador.salvar()">+</button>
-
-    </div>
-    <div>
-
-        <table>
-
-            <tbody id="tabela">
-
-            </tbody>
-
-        </table>
+    <div class="card">
+        <div class="principal">
+            <h2>Gerenciador de Tarefas</h2>
+    
+            <div class="entrada">
+                <input type="text" placeholder="Tarefa" id="input">
+                <img src="img/add.svg" onclick="gerenciador.salvar()">
+            </div>
+    
+        </div>
+        
+        <div class="lista">
+            <table class="tabela">
+                <tbody id="tabela"></tbody>
+            </table>
+        </div>
     </div>
 
 </body>

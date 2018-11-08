@@ -95,13 +95,8 @@ class Gerenciador{
                 celulaDescricao.innerText = this.lista[i].descricao;
                 celulaExcluir.appendChild(imagemDeletar);
                 celulaEditar.appendChild(imagemEditar);
-
-
-
                 
             }
-        
-
         }
 
         excluir(id){

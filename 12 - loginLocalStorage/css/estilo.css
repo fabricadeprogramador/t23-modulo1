@@ -1,0 +1,52 @@
+body{
+    font-family: sans-serif;
+    background-image: url(http://bdfjade.com/data/out/56/5631356-background-image.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.card{
+    background-color: #f1f1f1;
+    width: 30%;
+    margin: 100px auto 0px auto;
+    padding: 40px;
+}
+
+.card input{
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+}
+
+.card h1{
+    text-align: center;
+    font-weight: 100;
+    color: #636262;
+}
+
+.card button{
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    font-size: 12pt;
+}
+
+.card img{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+.rodape{
+    text-align: center;
+    margin: 10px;
+    font-size: 10pt;
+    color: lightgray;
+}
+
+.rodape a{
+    text-decoration: none;
+    color: #636262;
+}
