@@ -58,8 +58,7 @@ class Gerenciador {
         } else {
             let usuarioConvertido = JSON.parse(usuarioRetornado);
             if (this.usuarioLogin.senha == usuarioConvertido.senha) {
-                localStorage.setItem("usuarioLogado", JSON.stringify(usuarioConvertido));
-                window.location.href = "home.html";
+                window.location.href = `home.html?nome=${usuarioConvertido.nome}`;
             } else{
                 alert("Senha Invalida!");
             }
@@ -76,8 +75,17 @@ class Gerenciador {
 
     mostrarNome(){
 
-        let usuarioFinal = JSON.parse(localStorage.getItem("usuarioLogado"));
-        document.getElementById("spanNome").innerText = usuarioFinal.nome; 
+        let URL = window.location.href;
+
+        let posicao = URL.lastIndexOf("=");
+
+        let nomeDecodificado = URL.slice(posicao + 1, URL.length);
+
+        let nome = decodeURI(nomeDecodificado)
+
+        alert(nome)
+
+        document.getElementById("spanNome").innerText = nome; 
     }
 
     removerUsuario() {
