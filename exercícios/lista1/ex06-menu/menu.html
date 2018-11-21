@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/GerenciadorMenu.js"></script>
+    <title>Menu</title>
+</head>
+
+<body>
+
+    <div id="menu">
+        <h1>Menu</h1>
+
+        <div>[1] - Exibir os números ímpares de 0 a 100</div>
+        <div>[2] - Encontrar o nome secreto</div>
+        <div>[3] - Ocorrências do número 1 no intervalo</div>
+        <div>[4] - Sair</div>
+
+        <div>
+            <input type="number" placeholder="Digite a opção" id="opcao">
+        </div>
+        <div>
+            <button type="button" onclick="gerenciador.selecionarOpcao()">Selecionar</button>
+        </div>
+    </div>
+
+    <div id="resultado">
+        <div id="opcao1" style="display:none;">
+            <div>
+                <span id="span-op1"></span>
+            </div>
+            <div>
+                <button type="button" onclick="gerenciador.voltar()">Voltar</button>
+            </div>
+        </div>
+
+        <div id="opcao2" style="display:none;">
+            <div>
+                <h2>Tente descobrir o nome secreto</h2>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Nome" id="input-op2">
+                <button type="button" onclick="gerenciador.adicionarNome()">Adicionar</button>
+                <button type="button" onclick="gerenciador.voltar()">Voltar</button>
+            </div>
+
+            <div>
+                <span id="span-op2"></span>
+            </div>
+        </div>
+
+        <div id="opcao3">
+            <div>
+                <input type="number" placeholder="Valor Limite" id="limite-op3">
+            </div>
+            <div>
+                <button type="button" onclick="gerenciador.verificarOcorrenciasdeUm()">Ir</button>
+                <button type="button" onclick="gerenciador.voltar()">Voltar</button>
+            </div>
+
+            <div>
+                <span id="qtd-op3"></span>
+                <span id="resultado-op3"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
