@@ -45,25 +45,49 @@ class GerenciadorMenu{
     }
 
     opcao3(){
-
+        document.getElementById("qtd-op3").innerText = "Qtd: " + 0 + "\n";
+        document.getElementById("resultado-op3").innerText = "";
     }
 
     verificarOcorrenciasdeUm(){
-        let limiteStr = document.getElementById("limite-op3").value;
+        let limite = document.getElementById("limite-op3").value;
+        if (limite != "")
+            limite = parseInt(limite);
 
-        if(limiteStr == ""){
-            alert("Digite o valor limite!")
-            return;
+        let indice = 0;
+        let contador = 0;
+        let lista = "";
+
+        //Laço que anda de 0 até o numero limite digitado pelo usuário
+        while (indice < limite) {
+            //flag usada pra não imprimir mais de uma vez o número
+            let flag = false;
+
+            //Separa o numero do índice por algarismo e coloca em um array (num)
+            let num = indice.toString().split("");
+
+            //Percorre o array com o número para verificar se tem o número um e quantas vezes ele aparece
+            for (let index = 0; index < num.length; index++) {
+                //Verifica se a posição atual é o número 1
+                if (num[index] == "1") {
+                    //Verifica se esse número já foi impresso
+                    if (!flag) {
+                        //Adiciona na lista somente se o número não foi inserido ainda
+                        lista += indice + " ";
+                        //Após inserir a primeira vez não insere mais pra impressão
+                        flag = true;
+                    }
+
+                    //Encontrou o número 1, incrementa
+                    contador++;
+                }
+            }
+            //Como não se trata de um laço "for" temos que incrementar o índice 
+            indice++;
         }
 
-        let limite = parseInt(limiteStr);
-        let i = 1;
-
-        while(i <= limite){
-            
-
-            i++;
-        }
+        document.getElementById("qtd-op3").innerText = "Qtd: " + contador + "\n";
+        document.getElementById("resultado-op3").innerText = lista;
     }
 
     voltar(){
