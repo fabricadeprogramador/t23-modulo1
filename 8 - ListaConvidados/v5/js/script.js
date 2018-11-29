@@ -55,6 +55,11 @@ class ListaConvidados {
         }
     }
 
+    //EDITAR
+    //No método editar deverá ser enviado o objeto inteiro no corpo da requisição pelo método PUT, contendo o atributo _id do objeto a ser editado
+
+    //EXCLUIR
+    //No método exluir deverá ser enviado o atributo _id do objeto a ser excluído no final da requisição .../convidados/"_id"
     validar(convidado) {
         let mensagem = "";
 
