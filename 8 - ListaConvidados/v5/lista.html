@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
 
-    <body>
+    <body onload="lista.buscarConvidados()">
 
         <div class="card">
             <h2 class="card-title">Adicionar Convidado</h2>
@@ -29,6 +29,7 @@
 
             <div class="card-acoes">
                 <button type="button" onclick="lista.salvar()">Salvar</button>
+                <button type="button" onclick="lista.inserirConvidadoAPI()">Salvar na API</button>
             </div>
         </div>
 

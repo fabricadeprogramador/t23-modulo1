@@ -28,6 +28,33 @@ class ListaConvidados {
         return convidado;
     }
 
+    buscarConvidados() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = () => {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                this.convidados = JSON.parse(xhttp.responseText);
+                this.gerarTabela();
+            }
+        };
+        xhttp.open("GET", "https://fdp-2018-modulo2.herokuapp.com/convidados", true);
+        xhttp.send();
+    }
+
+    inserirConvidadoAPI() {
+        let convidado = this.lerDados()
+        if (this.validar(convidado)) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                   this.buscarConvidados();
+                }
+            };
+            xhttp.open("POST", "https://fdp-2018-modulo2.herokuapp.com/convidados", true);
+            xhttp.setRequestHeader("Content-Type", "application/json")
+            xhttp.send(JSON.stringify(convidado));
+        }
+    }
+
     validar(convidado) {
         let mensagem = "";
 
@@ -56,32 +83,32 @@ class ListaConvidados {
         let convidadoRetornado = this.lerDados();
 
         if (this.validar(convidadoRetornado)) {
-            if(this.idEdicao == null){
+            if (this.idEdicao == null) {
                 this.convidados.push(convidadoRetornado);
                 this.contador++;
                 this.gerarTabela();
             } else {
                 convidadoRetornado.id = this.idEdicao;
-               for(let i = 0; i < this.convidados.length; i++){
-                   if(this.convidados[i].id == this.idEdicao){
-                        this.convidados.splice(i,1, convidadoRetornado);
-                   }
-               }
-               this.idEdicao = null;
-               this.gerarTabela();
+                for (let i = 0; i < this.convidados.length; i++) {
+                    if (this.convidados[i].id == this.idEdicao) {
+                        this.convidados.splice(i, 1, convidadoRetornado);
+                    }
+                }
+                this.idEdicao = null;
+                this.gerarTabela();
             }
         }
 
         this.limpar();
     }
 
-    gerarTabela(){
+    gerarTabela() {
 
         let tabela = document.getElementById("tabela");
         tabela.innerHTML = "";
 
         //Percorre todos os elementos do array convidados
-        for(let i = 0; i < this.convidados.length; i++){
+        for (let i = 0; i < this.convidados.length; i++) {
             let convidadoCorrente = this.convidados[i];
 
             let linha = tabela.insertRow();
@@ -114,13 +141,13 @@ class ListaConvidados {
 
     remover(id) {
         if (window.confirm("Tem certeza que deseja excluir este convidado?")) {
-           for(let i = 0; i < this.convidados.length; i++){
-               if(this.convidados[i].id == id){
-                   this.convidados.splice(i, 1);
-               }
-           }
+            for (let i = 0; i < this.convidados.length; i++) {
+                if (this.convidados[i].id == id) {
+                    this.convidados.splice(i, 1);
+                }
+            }
 
-           this.gerarTabela();
+            this.gerarTabela();
         }
     }
 
